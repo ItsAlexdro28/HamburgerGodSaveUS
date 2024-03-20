@@ -1,0 +1,347 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+body {
+    background-color: #1e1d2b;
+    color: aliceblue;
+    font-family: 'Poppins', sans-serif;
+    
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 1px solid red;
+}
+/* Nav menu */
+.container {
+    max-width: 1920px;
+    margin: auto;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+ul {
+    list-style: none;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+.header{
+    background-color: #1e1d2b;
+    padding: 12px 0;
+    position: relative;
+}
+.header .return, .header .nav{
+    padding: 15px;
+    text-transform: capitalize;
+    font-size: 20px;
+}
+.header .return p {
+    color: aliceblue;
+}
+.header .nav ul li{
+    display: inline-block;
+    margin-left: 40px;
+}
+.header .nav ul li a{
+    display: block;
+    font-size: 15px;
+    padding: 10px 0;
+    transition: all0.5s ease;
+    color: rgba(255,255,255,0.7);
+}
+.header .nav ul li a:hover,
+.header .nav ul li a.active {
+    color: #ffffff;
+}
+.header #nav-check{
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+} 
+.nav-toggler {
+    height: 35px;
+    width: 40px;
+    background-color: #ffffff;
+    border-radius: 15%;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+}
+.nav-toggler span {
+    display: block;
+    height: 2px;
+    width: 20px;
+    background-color: red;
+    position: relative;
+}
+.nav-toggler span::before,
+.nav-toggler span::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    left:0;
+}
+.nav-toggler span::before{
+    top: -6px
+}
+.nav-toggler span::after{
+    top: 6px
+}
+@media(max-width: 991px){
+    * {
+        border: 1px solid blue;
+    }
+    .nav-toggler{
+        display: flex;
+    }
+    .header .nav{
+        position: absolute;
+        left:0;
+        top:100%;
+        width:100%;
+        background-color: #2c2b47;
+        border-top: 1px solid #fff;
+        opacity:0;
+        visibility: hidden;
+    }
+    .header .nav ul li{
+        display: block;
+        margin:0;
+    }
+    .header #nav-check:checked ~ .nav{
+        opacity:1;
+        visibility: visible;
+    }
+    .header #nav-check:focus ~ .nav-toggler{
+        box-shadow: 0 0 15px #000;
+    }
+    .header #nav-check:checked ~ .nav-toggler span{
+        background-color: transparent;
+    } 
+    .header #nav-check:checked ~ .nav-toggler span::before{
+        top:0;
+        transform: rotate(45deg);
+    }
+    .header #nav-check:checked ~ .nav-toggler span::after{
+        top:0;
+        transform: rotate(-45deg);
+    }
+}
+/* Colors */
+.color-line{
+    width: 100%;
+    background-color: orangered ;
+    height: 2px;
+    margin: 3vw 0;
+}
+.orange {
+    color: #ff702a;
+}
+.orange-button {
+    background-color: #ff702a;
+}
+.white-div h4, .white-div h5{
+    color: #000;
+}
+/* First page / Home */
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.title {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 2%;
+    width: 45vw;
+    font-size: 2.8vw;
+}
+.title .big-p{
+    font-size: 1.2vw;
+}
+.title *{ 
+    margin: 0.5%;
+}
+.img-big {
+    display: flex;
+    justify-content: center;
+    width: 35vw;
+    padding: 2%;
+}
+.img-big img{
+    width:90%;
+}
+.orange-button {
+    align-self: flex-start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    height: 1.8vw;
+}
+.orange-button a{
+    text-align: center;
+    margin: 0;
+    width: 90%;
+    height: 90%;
+    font-size: 0.8vw;
+}
+/* Second page / about */
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.smol{
+    font-size: 1vw;
+}
+.title h2 {
+    font-size: 3.2vw;
+}
+.title p{
+    font-size: 1.1vw;
+}
+/* third page / menu */
+.menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.menu .smol{
+    align-self: center;
+}
+.menu .title{
+    width: 50vw;
+}
+.products {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 75vw;
+    height: 30vw;
+}
+.white-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 23vw;
+    height: 23vw;
+    background-color: #ffefe8;
+}
+.white-div h4 {
+    font-size: 1.3vw;
+}
+.white-div h5 {
+    font-size: 1vw;
+}
+.white-div h6 {
+    font-size: 1vw;
+}
+.img-smol{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 17vw;
+}
+.img-smol img{
+    width: 90%
+}
+/*Forth page / services  */
+
+
+
+@media(max-width: 991px){
+    .color-line{
+        margin: 5vw 0;
+    }
+    /* 1st */
+    .home {
+        flex-direction: column;
+        align-items: center;
+    }
+    .title{
+        box-sizing: border-box;
+        width: 90vw;
+        justify-content: center;
+        align-items: center;
+        font-size: 4.5vw;
+    }
+    .title h1{
+        font-size: 12vw;
+    }
+    .title .big-p {
+        font-size: 4.5vw;
+    }
+    .img-big{
+        width: 80vw;
+    }
+    .orange-button {
+        align-self: center;
+        margin: 0;
+        width: 25vw;
+        height: 6vw;
+    }
+    .orange-button a{
+        font-size: 3vw;
+        margin: 0;
+    }
+    .about{
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    .title .smol{
+        font-size: 2.5vw;
+    }
+    .title h2 {
+        font-size: 6.5vw;
+        text-align: center;
+    }
+    .title p {
+        font-size: 2.5vw;
+    }
+    .menu .title{
+        width: 80vw;
+    }
+    .menu .title h2{
+        font-size: 6vw;
+    }
+    .products {
+        flex-direction: column;
+        width: 80vw;
+        height: 250vw;
+    }
+    .white-div {
+        width: 70vw;
+        height: 70vw;
+    }
+    .white-div h4 {
+        font-size: 5.8vw;
+    }
+    .white-div h5 {
+        font-size: 4.4vw;
+    }
+    .white-div h6 {
+        font-size: 4.4vw;
+    }
+    .img-smol{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50vw;
+    }
+    .img-smol img{
+        width: 90%
+    } 
+}
